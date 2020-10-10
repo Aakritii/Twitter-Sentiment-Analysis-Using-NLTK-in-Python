@@ -54,8 +54,7 @@ def main():
 	#print('On which topic you want to fetch the tweet :')
 	query=input()
 	#print('How many tweets you want to fetch:')
-	cnt=int(input())
-	tweets = api.get_tweets(query, count = cnt)
+	tweets = api.get_tweets(query, count = int(input()))
 
 	ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
 	print("Positive tweets percentage for "+query+": {0:.2f}%".format(100*len(ptweets)/len(tweets)))
